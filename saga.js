@@ -1,5 +1,5 @@
 import { delay } from 'redux-saga'
-import { call,put, takeEvery, all } from 'redux-saga/effects'
+import { call,put, takeEvery } from 'redux-saga/effects'
 
 
 export function* helloSaga() {
@@ -16,8 +16,8 @@ export function* watchIncrementAsync() {
   }
 
   export default function* rootSaga() {
-    yield all([
+    yield [
       helloSaga(),
       watchIncrementAsync()
-    ])
+    ]
   }
